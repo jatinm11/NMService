@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct DashboardDataResponse: Codable {
+    let status: Bool
+    let data: DashboardData
+}
+
 struct DashboardData: Codable {
     
     let totalSales: Int
