@@ -45,18 +45,20 @@ class HomeViewController: UIViewController {
     func registerCells() {
         self.tableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "headerCell")
         self.tableView.register(UINib(nibName: "DateCell", bundle: nil), forCellReuseIdentifier: "dateCell")
+        self.tableView.register(UINib(nibName: "HomeDateCell", bundle: nil), forCellReuseIdentifier: "homeDateCell")
+        self.tableView.register(UINib(nibName: "ServiceSummaryCell", bundle: nil), forCellReuseIdentifier: "serviceSummaryCell")
     }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 4
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0,1:
+        case 0,1,2,3:
             return 1
         default:
             return 0
@@ -77,6 +79,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             dateCell.dateButton.isUserInteractionEnabled = false
             return dateCell
 
+        case 2:
+            let homeDateCell = tableView.dequeueReusableCell(withIdentifier: "homeDateCell", for: indexPath) as! HomeDateCell
+            homeDateCell.homeDateButton.contentHorizontalAlignment = .left
+            homeDateCell.homeDateButton.setTitle("Today, 03 April", for: .normal)
+            return homeDateCell
+            
+        case 3:
+            let serviceSummaryCell = tableView.dequeueReusableCell(withIdentifier: "serviceSummaryCell", for: indexPath) as! ServiceSummaryCell
+            return serviceSummaryCell
+
         default:
             return UITableViewCell()
         }
@@ -86,10 +98,24 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             return 50
-        case 1:
+        case 1,2:
             return 40
+        case 3:
+            return 330
         default:
             return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            navigationItem.title = "Home"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            navigationItem.title = ""
         }
     }
 }
