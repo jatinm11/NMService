@@ -9,17 +9,37 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViews()
 
-        NetworkController.shared.getDashboardData { (result) in
-            switch result {
-            case .success(let dashData):
-                print(dashData.weekServiceData.totalService)
-                
-            case .failure(let error):
-                print(error.rawValue)
-            }
-        }
+    }
+
+    func setupViews() {
+//        self.tableView.delegate = self
+//        self.tableView.dataSource = self
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
 }
+
+//extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//}

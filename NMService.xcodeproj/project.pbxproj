@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C454BA4261861CE007C1D26 /* JAMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C454BA3261861CE007C1D26 /* JAMTabBar.swift */; };
 		7CAC82462617318600EF68BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAC82452617318600EF68BD /* AppDelegate.swift */; };
 		7CAC824D2617318600EF68BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC824B2617318600EF68BD /* Main.storyboard */; };
 		7CAC824F2617318700EF68BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC824E2617318700EF68BD /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C454BA3261861CE007C1D26 /* JAMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAMTabBar.swift; sourceTree = "<group>"; };
 		7CAC82422617318600EF68BD /* NMService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAC82452617318600EF68BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CAC824C2617318600EF68BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,8 +67,9 @@
 				7CAC824B2617318600EF68BD /* Main.storyboard */,
 				7CBEEF4B2617348100B6653F /* HomeViewController.swift */,
 				7CBEEF522617373D00B6653F /* Models */,
-				7CBEEF482617336200B6653F /* Resources */,
 				7CBEEF582617375F00B6653F /* Controller */,
+				7CBEEF482617336200B6653F /* Resources */,
+				7C454BA3261861CE007C1D26 /* JAMTabBar.swift */,
 			);
 			path = NMService;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				7CBEEF502617352100B6653F /* DashboardData.swift in Sources */,
 				7CAC82462617318600EF68BD /* AppDelegate.swift in Sources */,
 				7CBEEF4C2617348100B6653F /* HomeViewController.swift in Sources */,
+				7C454BA4261861CE007C1D26 /* JAMTabBar.swift in Sources */,
 				7CBEEF5B2617507300B6653F /* JAMRequest.swift in Sources */,
 				7CBEEF5E261751E000B6653F /* JAMError.swift in Sources */,
 			);
