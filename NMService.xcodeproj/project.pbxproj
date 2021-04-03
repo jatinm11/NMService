@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7C454BA4261861CE007C1D26 /* JAMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C454BA3261861CE007C1D26 /* JAMTabBar.swift */; };
+		7C454BAC26186578007C1D26 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C454BAA26186578007C1D26 /* HeaderCell.swift */; };
+		7C454BAD26186578007C1D26 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C454BAB26186578007C1D26 /* HeaderCell.xib */; };
+		7C454BB4261866CB007C1D26 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C454BB2261866CB007C1D26 /* DateCell.swift */; };
+		7C454BB5261866CB007C1D26 /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C454BB3261866CB007C1D26 /* DateCell.xib */; };
 		7CAC82462617318600EF68BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAC82452617318600EF68BD /* AppDelegate.swift */; };
 		7CAC824D2617318600EF68BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC824B2617318600EF68BD /* Main.storyboard */; };
 		7CAC824F2617318700EF68BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC824E2617318700EF68BD /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		7C454BA3261861CE007C1D26 /* JAMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAMTabBar.swift; sourceTree = "<group>"; };
+		7C454BAA26186578007C1D26 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		7C454BAB26186578007C1D26 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		7C454BB2261866CB007C1D26 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		7C454BB3261866CB007C1D26 /* DateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
 		7CAC82422617318600EF68BD /* NMService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAC82452617318600EF68BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CAC824C2617318600EF68BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +53,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C454BA626186553007C1D26 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7C454BA3261861CE007C1D26 /* JAMTabBar.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7C454BA826186559007C1D26 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7CBEEF4B2617348100B6653F /* HomeViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7C454BAF2618657E007C1D26 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C454BAB26186578007C1D26 /* HeaderCell.xib */,
+				7C454BAA26186578007C1D26 /* HeaderCell.swift */,
+				7C454BB3261866CB007C1D26 /* DateCell.xib */,
+				7C454BB2261866CB007C1D26 /* DateCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		7CAC82392617318600EF68BD = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				7CAC824B2617318600EF68BD /* Main.storyboard */,
-				7CBEEF4B2617348100B6653F /* HomeViewController.swift */,
+				7C454BA826186559007C1D26 /* View Controllers */,
 				7CBEEF522617373D00B6653F /* Models */,
 				7CBEEF582617375F00B6653F /* Controller */,
 				7CBEEF482617336200B6653F /* Resources */,
-				7C454BA3261861CE007C1D26 /* JAMTabBar.swift */,
+				7C454BA626186553007C1D26 /* Helpers */,
+				7C454BAF2618657E007C1D26 /* Cells */,
 			);
 			path = NMService;
 			sourceTree = "<group>";
@@ -160,9 +196,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C454BAD26186578007C1D26 /* HeaderCell.xib in Resources */,
 				7CAC82522617318700EF68BD /* LaunchScreen.storyboard in Resources */,
 				7CAC824F2617318700EF68BD /* Assets.xcassets in Resources */,
 				7CAC824D2617318600EF68BD /* Main.storyboard in Resources */,
+				7C454BB5261866CB007C1D26 /* DateCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +215,8 @@
 				7CBEEF502617352100B6653F /* DashboardData.swift in Sources */,
 				7CAC82462617318600EF68BD /* AppDelegate.swift in Sources */,
 				7CBEEF4C2617348100B6653F /* HomeViewController.swift in Sources */,
+				7C454BB4261866CB007C1D26 /* DateCell.swift in Sources */,
+				7C454BAC26186578007C1D26 /* HeaderCell.swift in Sources */,
 				7C454BA4261861CE007C1D26 /* JAMTabBar.swift in Sources */,
 				7CBEEF5B2617507300B6653F /* JAMRequest.swift in Sources */,
 				7CBEEF5E261751E000B6653F /* JAMError.swift in Sources */,
