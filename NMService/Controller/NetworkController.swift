@@ -55,13 +55,39 @@ struct NetworkController {
             }
             
             guard let data = data else { completion(.failure(.noDataRecieved)); return }
-
-            print(String(data: data, encoding: .utf8) ?? "")
             
             do {
                 let decoder = JSONDecoder()
                 let dashboardDataResponse = try decoder.decode(DashboardDataResponse.self, from: data)
                 completion(.success(dashboardDataResponse.data))
+            }
+            catch {
+                completion(.failure(.decodingError))
+            }
+        }
+    }
+    
+    func getServiceList(completion: @escaping(Result<[Service], JAMError>) -> Void) {
+        
+        let bodyDict: [String : Any] = ["from_date": "28-03-2021", "operation": "v", "service_status": "11", "sub_trans_type": "", "technician_id": "0", "to_date": "11-04-2021", "trans_type": ""]
+        
+        let bodyData = try? JSONSerialization.data(withJSONObject: bodyDict, options: [])
+        
+        let request = JAMRequest(endPoint: EndPoint.serviceList.rawValue, body: bodyData)
+        
+        callAPIWith(request: request) { (data, error) in
+            if let error = error {
+                print("Error in get production data -> \(error.localizedDescription)")
+                completion(.failure(.completionBlockError))
+                return
+            }
+            
+            guard let data = data else { completion(.failure(.noDataRecieved)); return }
+            
+            do {
+                let decoder = JSONDecoder()
+                let serviceListResponse = try decoder.decode(ServiceListResponse.self, from: data)
+                completion(.success(serviceListResponse.data))
             }
             catch {
                 completion(.failure(.decodingError))
@@ -74,5 +100,5 @@ struct NetworkController {
 enum EndPoint: String {
     case dashboardData = "/api/reports/dashboardData"
     case technicianList = "/api/masterlist/GetMasterList"
-    case serviceList = "/api/reports/serviceListForTechnician"
+    case serviceList = "/api/reports/servicelist"
 }

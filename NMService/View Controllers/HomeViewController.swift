@@ -63,18 +63,19 @@ class HomeViewController: UIViewController {
         self.tableView.register(UINib(nibName: "DateCell", bundle: nil), forCellReuseIdentifier: "dateCell")
         self.tableView.register(UINib(nibName: "HomeDateCell", bundle: nil), forCellReuseIdentifier: "homeDateCell")
         self.tableView.register(UINib(nibName: "ServiceSummaryCell", bundle: nil), forCellReuseIdentifier: "serviceSummaryCell")
+        self.tableView.register(UINib(nibName: "InstallationSummaryCell", bundle: nil), forCellReuseIdentifier: "installationSummaryCell")
     }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 6
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0,1,2,3:
+        case 0,1,2,3,4,5:
             return 1
         default:
             return 0
@@ -106,6 +107,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             serviceSummaryCell.serviceObject = self.serviceDashboardData
             return serviceSummaryCell
 
+        case 4:
+            let homeDateCell = tableView.dequeueReusableCell(withIdentifier: "homeDateCell", for: indexPath) as! HomeDateCell
+            homeDateCell.homeDateButton.contentHorizontalAlignment = .left
+            homeDateCell.homeDateButton.setTitle("Installation Summary", for: .normal)
+            return homeDateCell
+            
+        case 5:
+            let installationSummaryCell = tableView.dequeueReusableCell(withIdentifier: "installationSummaryCell", for: indexPath) as! InstallationSummaryCell
+            return installationSummaryCell
+            
         default:
             return UITableViewCell()
         }
@@ -113,13 +124,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 0:
+        case 0,4:
             return 50
         case 1:
             return 35
         case 2:
             return 40
-        case 3:
+        case 3,5:
             return 330
         default:
             return 0

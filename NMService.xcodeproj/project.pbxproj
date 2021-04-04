@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0325D02619E5E500CC0B42 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0325CF2619E5E500CC0B42 /* Service.swift */; };
 		7C454BA4261861CE007C1D26 /* JAMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C454BA3261861CE007C1D26 /* JAMTabBar.swift */; };
 		7C454BAC26186578007C1D26 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C454BAA26186578007C1D26 /* HeaderCell.swift */; };
 		7C454BAD26186578007C1D26 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C454BAB26186578007C1D26 /* HeaderCell.xib */; };
@@ -27,9 +28,12 @@
 		7CBEEF552617375A00B6653F /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEEF542617375A00B6653F /* NetworkController.swift */; };
 		7CBEEF5B2617507300B6653F /* JAMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEEF5A2617507300B6653F /* JAMRequest.swift */; };
 		7CBEEF5E261751E000B6653F /* JAMError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEEF5D261751E000B6653F /* JAMError.swift */; };
+		7CE1C32D261A52C8005B6387 /* InstallationSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE1C32B261A52C8005B6387 /* InstallationSummaryCell.swift */; };
+		7CE1C32E261A52C8005B6387 /* InstallationSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE1C32C261A52C8005B6387 /* InstallationSummaryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C0325CF2619E5E500CC0B42 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		7C454BA3261861CE007C1D26 /* JAMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAMTabBar.swift; sourceTree = "<group>"; };
 		7C454BAA26186578007C1D26 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		7C454BAB26186578007C1D26 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 		7CBEEF542617375A00B6653F /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		7CBEEF5A2617507300B6653F /* JAMRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAMRequest.swift; sourceTree = "<group>"; };
 		7CBEEF5D261751E000B6653F /* JAMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAMError.swift; sourceTree = "<group>"; };
+		7CE1C32B261A52C8005B6387 /* InstallationSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationSummaryCell.swift; sourceTree = "<group>"; };
+		7CE1C32C261A52C8005B6387 /* InstallationSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstallationSummaryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,8 @@
 				7C5D98DE26187FE800B377BA /* HomeDateCell.swift */,
 				7C5D98E5261887BD00B377BA /* ServiceSummaryCell.xib */,
 				7C5D98E4261887BD00B377BA /* ServiceSummaryCell.swift */,
+				7CE1C32C261A52C8005B6387 /* InstallationSummaryCell.xib */,
+				7CE1C32B261A52C8005B6387 /* InstallationSummaryCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -145,6 +153,7 @@
 				7CBEEF4F2617352100B6653F /* DashboardData.swift */,
 				7CBEEF5A2617507300B6653F /* JAMRequest.swift */,
 				7CBEEF5D261751E000B6653F /* JAMError.swift */,
+				7C0325CF2619E5E500CC0B42 /* Service.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +227,7 @@
 				7CAC82522617318700EF68BD /* LaunchScreen.storyboard in Resources */,
 				7CAC824F2617318700EF68BD /* Assets.xcassets in Resources */,
 				7C5D98E7261887BD00B377BA /* ServiceSummaryCell.xib in Resources */,
+				7CE1C32E261A52C8005B6387 /* InstallationSummaryCell.xib in Resources */,
 				7CAC824D2617318600EF68BD /* Main.storyboard in Resources */,
 				7C5D98E126187FE800B377BA /* HomeDateCell.xib in Resources */,
 				7C454BB5261866CB007C1D26 /* DateCell.xib in Resources */,
@@ -232,11 +242,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5D98E026187FE800B377BA /* HomeDateCell.swift in Sources */,
+				7C0325D02619E5E500CC0B42 /* Service.swift in Sources */,
 				7CBEEF552617375A00B6653F /* NetworkController.swift in Sources */,
 				7CBEEF502617352100B6653F /* DashboardData.swift in Sources */,
 				7CAC82462617318600EF68BD /* AppDelegate.swift in Sources */,
 				7CBEEF4C2617348100B6653F /* HomeViewController.swift in Sources */,
 				7C454BB4261866CB007C1D26 /* DateCell.swift in Sources */,
+				7CE1C32D261A52C8005B6387 /* InstallationSummaryCell.swift in Sources */,
 				7C454BAC26186578007C1D26 /* HeaderCell.swift in Sources */,
 				7C454BA4261861CE007C1D26 /* JAMTabBar.swift in Sources */,
 				7C5D98EE2618A3A600B377BA /* Extensions.swift in Sources */,
