@@ -11,11 +11,27 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var serviceDashboardData: WeekServiceData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         registerCells()
+        
+        NetworkController.shared.getDashboardData { (result) in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+                return
+                
+            case .success(let dashboardData):
+                DispatchQueue.main.async {
+                    self.serviceDashboardData = dashboardData.weekServiceData
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
     func setupViews() {
@@ -75,18 +91,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let dateCell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath) as! DateCell
             dateCell.dateButton.contentHorizontalAlignment = .left
-            dateCell.dateButton.setTitle("Good Evening, Boss 👋", for: .normal)
+            dateCell.dateButton.setTitle("Today, 03 April", for: .normal)
             dateCell.dateButton.isUserInteractionEnabled = false
             return dateCell
 
         case 2:
             let homeDateCell = tableView.dequeueReusableCell(withIdentifier: "homeDateCell", for: indexPath) as! HomeDateCell
             homeDateCell.homeDateButton.contentHorizontalAlignment = .left
-            homeDateCell.homeDateButton.setTitle("Today, 03 April", for: .normal)
+            homeDateCell.homeDateButton.setTitle("Service Summary", for: .normal)
             return homeDateCell
             
         case 3:
             let serviceSummaryCell = tableView.dequeueReusableCell(withIdentifier: "serviceSummaryCell", for: indexPath) as! ServiceSummaryCell
+            serviceSummaryCell.serviceObject = self.serviceDashboardData
             return serviceSummaryCell
 
         default:
@@ -98,7 +115,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             return 50
-        case 1,2:
+        case 1:
+            return 35
+        case 2:
             return 40
         case 3:
             return 330

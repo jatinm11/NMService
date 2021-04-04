@@ -32,6 +32,7 @@ struct WeekServiceData: Codable {
     let totalServiceClosed: Int
     let totalServiceFree: Int
     let totalServicePaid: Int
+    let totalServiceInProgress: Int
     
     enum CodingKeys: String, CodingKey {
         case totalService = "total_service"
@@ -39,5 +40,6 @@ struct WeekServiceData: Codable {
         case totalServiceClosed = "total_service_closed"
         case totalServiceFree = "total_service_free"
         case totalServicePaid = "total_service_paid"
+        case totalServiceInProgress = "total_service_inprog"
     }
 }

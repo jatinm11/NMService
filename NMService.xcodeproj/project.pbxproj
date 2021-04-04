@@ -17,6 +17,7 @@
 		7C5D98E6261887BD00B377BA /* ServiceSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D98E4261887BD00B377BA /* ServiceSummaryCell.swift */; };
 		7C5D98E7261887BD00B377BA /* ServiceSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D98E5261887BD00B377BA /* ServiceSummaryCell.xib */; };
 		7C5D98EA261887E700B377BA /* JAMViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D98E9261887E700B377BA /* JAMViews.swift */; };
+		7C5D98EE2618A3A600B377BA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D98ED2618A3A600B377BA /* Extensions.swift */; };
 		7CAC82462617318600EF68BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAC82452617318600EF68BD /* AppDelegate.swift */; };
 		7CAC824D2617318600EF68BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC824B2617318600EF68BD /* Main.storyboard */; };
 		7CAC824F2617318700EF68BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC824E2617318700EF68BD /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		7C5D98E4261887BD00B377BA /* ServiceSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSummaryCell.swift; sourceTree = "<group>"; };
 		7C5D98E5261887BD00B377BA /* ServiceSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceSummaryCell.xib; sourceTree = "<group>"; };
 		7C5D98E9261887E700B377BA /* JAMViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAMViews.swift; sourceTree = "<group>"; };
+		7C5D98ED2618A3A600B377BA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7CAC82422617318600EF68BD /* NMService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAC82452617318600EF68BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CAC824C2617318600EF68BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				7C454BA3261861CE007C1D26 /* JAMTabBar.swift */,
 				7C5D98E9261887E700B377BA /* JAMViews.swift */,
+				7C5D98ED2618A3A600B377BA /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				7C454BB4261866CB007C1D26 /* DateCell.swift in Sources */,
 				7C454BAC26186578007C1D26 /* HeaderCell.swift in Sources */,
 				7C454BA4261861CE007C1D26 /* JAMTabBar.swift in Sources */,
+				7C5D98EE2618A3A600B377BA /* Extensions.swift in Sources */,
 				7CBEEF5B2617507300B6653F /* JAMRequest.swift in Sources */,
 				7C5D98E6261887BD00B377BA /* ServiceSummaryCell.swift in Sources */,
 				7CBEEF5E261751E000B6653F /* JAMError.swift in Sources */,
