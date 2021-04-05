@@ -58,6 +58,37 @@
             </objects>
             <point key="canvasLocation" x="942" y="-133"/>
         </scene>
+        <!--Service List View Controller-->
+        <scene sceneID="BZ7-tC-UW1">
+            <objects>
+                <viewController storyboardIdentifier="serviceListVC" id="XMC-Z1-tHM" customClass="ServiceListViewController" customModule="NMService" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jAu-MM-MrT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aIR-tC-iAN">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MKs-0m-BJS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aIR-tC-iAN" firstAttribute="leading" secondItem="MKs-0m-BJS" secondAttribute="leading" id="BB1-9p-Jfc"/>
+                            <constraint firstItem="MKs-0m-BJS" firstAttribute="bottom" secondItem="aIR-tC-iAN" secondAttribute="bottom" id="fMm-zb-542"/>
+                            <constraint firstItem="MKs-0m-BJS" firstAttribute="trailing" secondItem="aIR-tC-iAN" secondAttribute="trailing" id="tfc-dh-Wmp"/>
+                            <constraint firstItem="aIR-tC-iAN" firstAttribute="top" secondItem="MKs-0m-BJS" secondAttribute="top" id="uyx-i6-fWa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="aIR-tC-iAN" id="MgQ-dT-G3X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FsY-yg-F3N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="-133"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="BNo-vn-O4E">
             <objects>
@@ -69,6 +100,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kxv-RQ-ikW">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                         </textAttributes>

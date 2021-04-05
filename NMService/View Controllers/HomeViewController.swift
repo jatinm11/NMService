@@ -65,6 +65,10 @@ class HomeViewController: UIViewController {
         self.tableView.register(UINib(nibName: "ServiceSummaryCell", bundle: nil), forCellReuseIdentifier: "serviceSummaryCell")
         self.tableView.register(UINib(nibName: "InstallationSummaryCell", bundle: nil), forCellReuseIdentifier: "installationSummaryCell")
     }
+    
+    @objc func fullReportButtonTapped() {
+        self.navigationController?.pushViewController(ServiceListViewController.controller(), animated: true)
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -105,6 +109,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 3:
             let serviceSummaryCell = tableView.dequeueReusableCell(withIdentifier: "serviceSummaryCell", for: indexPath) as! ServiceSummaryCell
             serviceSummaryCell.serviceObject = self.serviceDashboardData
+            serviceSummaryCell.fullReportButton.addTarget(self, action: #selector(fullReportButtonTapped), for: .touchUpInside)
             return serviceSummaryCell
 
         case 4:
