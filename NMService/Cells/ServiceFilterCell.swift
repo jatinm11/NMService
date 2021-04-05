@@ -9,5 +9,6 @@ import UIKit
 
 class ServiceFilterCell: UITableViewCell {
 
-
+    @IBOutlet weak var totalItemsLabel: UILabel!
+    
 }
