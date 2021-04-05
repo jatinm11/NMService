@@ -20,6 +20,10 @@
 		7C5D98EA261887E700B377BA /* JAMViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D98E9261887E700B377BA /* JAMViews.swift */; };
 		7C5D98EE2618A3A600B377BA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D98ED2618A3A600B377BA /* Extensions.swift */; };
 		7C7A5743261B0FDF0053C8C9 /* ServiceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A5742261B0FDF0053C8C9 /* ServiceListViewController.swift */; };
+		7C7A5747261B67740053C8C9 /* ServiceFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A5745261B67740053C8C9 /* ServiceFilterCell.swift */; };
+		7C7A5748261B67740053C8C9 /* ServiceFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A5746261B67740053C8C9 /* ServiceFilterCell.xib */; };
+		7C7A574D261B6E950053C8C9 /* ServiceDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A574B261B6E950053C8C9 /* ServiceDetailCell.swift */; };
+		7C7A574E261B6E950053C8C9 /* ServiceDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A574C261B6E950053C8C9 /* ServiceDetailCell.xib */; };
 		7CAC82462617318600EF68BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAC82452617318600EF68BD /* AppDelegate.swift */; };
 		7CAC824D2617318600EF68BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC824B2617318600EF68BD /* Main.storyboard */; };
 		7CAC824F2617318700EF68BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC824E2617318700EF68BD /* Assets.xcassets */; };
@@ -47,6 +51,10 @@
 		7C5D98E9261887E700B377BA /* JAMViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAMViews.swift; sourceTree = "<group>"; };
 		7C5D98ED2618A3A600B377BA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7C7A5742261B0FDF0053C8C9 /* ServiceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListViewController.swift; sourceTree = "<group>"; };
+		7C7A5745261B67740053C8C9 /* ServiceFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFilterCell.swift; sourceTree = "<group>"; };
+		7C7A5746261B67740053C8C9 /* ServiceFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceFilterCell.xib; sourceTree = "<group>"; };
+		7C7A574B261B6E950053C8C9 /* ServiceDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailCell.swift; sourceTree = "<group>"; };
+		7C7A574C261B6E950053C8C9 /* ServiceDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceDetailCell.xib; sourceTree = "<group>"; };
 		7CAC82422617318600EF68BD /* NMService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAC82452617318600EF68BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CAC824C2617318600EF68BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +113,10 @@
 				7C5D98E4261887BD00B377BA /* ServiceSummaryCell.swift */,
 				7CE1C32C261A52C8005B6387 /* InstallationSummaryCell.xib */,
 				7CE1C32B261A52C8005B6387 /* InstallationSummaryCell.swift */,
+				7C7A5746261B67740053C8C9 /* ServiceFilterCell.xib */,
+				7C7A5745261B67740053C8C9 /* ServiceFilterCell.swift */,
+				7C7A574C261B6E950053C8C9 /* ServiceDetailCell.xib */,
+				7C7A574B261B6E950053C8C9 /* ServiceDetailCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -227,6 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C454BAD26186578007C1D26 /* HeaderCell.xib in Resources */,
+				7C7A5748261B67740053C8C9 /* ServiceFilterCell.xib in Resources */,
+				7C7A574E261B6E950053C8C9 /* ServiceDetailCell.xib in Resources */,
 				7CAC82522617318700EF68BD /* LaunchScreen.storyboard in Resources */,
 				7CAC824F2617318700EF68BD /* Assets.xcassets in Resources */,
 				7C5D98E7261887BD00B377BA /* ServiceSummaryCell.xib in Resources */,
@@ -250,9 +264,11 @@
 				7CBEEF502617352100B6653F /* DashboardData.swift in Sources */,
 				7CAC82462617318600EF68BD /* AppDelegate.swift in Sources */,
 				7CBEEF4C2617348100B6653F /* HomeViewController.swift in Sources */,
+				7C7A574D261B6E950053C8C9 /* ServiceDetailCell.swift in Sources */,
 				7C7A5743261B0FDF0053C8C9 /* ServiceListViewController.swift in Sources */,
 				7C454BB4261866CB007C1D26 /* DateCell.swift in Sources */,
 				7CE1C32D261A52C8005B6387 /* InstallationSummaryCell.swift in Sources */,
+				7C7A5747261B67740053C8C9 /* ServiceFilterCell.swift in Sources */,
 				7C454BAC26186578007C1D26 /* HeaderCell.swift in Sources */,
 				7C454BA4261861CE007C1D26 /* JAMTabBar.swift in Sources */,
 				7C5D98EE2618A3A600B377BA /* Extensions.swift in Sources */,

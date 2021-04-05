@@ -31,6 +31,7 @@ class ServiceListViewController: UIViewController {
     func registerCells() {
         self.tableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "headerCell")
         self.tableView.register(UINib(nibName: "DateCell", bundle: nil), forCellReuseIdentifier: "dateCell")
+        self.tableView.register(UINib(nibName: "ServiceFilterCell", bundle: nil), forCellReuseIdentifier: "serviceFilterCell")
     }
     
     class func controller() -> UIViewController {
@@ -42,12 +43,12 @@ class ServiceListViewController: UIViewController {
 extension ServiceListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0,1:
+        case 0,1,2:
             return 1
         default:
             return 0
@@ -67,6 +68,10 @@ extension ServiceListViewController: UITableViewDelegate, UITableViewDataSource 
             dateCell.dateButton.setTitle("Today, 03 April", for: .normal)
             dateCell.dateButton.isUserInteractionEnabled = false
             return dateCell
+            
+        case 2:
+            let serviceFilterCell = tableView.dequeueReusableCell(withIdentifier: "serviceFilterCell", for: indexPath) as! ServiceFilterCell
+            return serviceFilterCell
 
         default:
             return UITableViewCell()
@@ -75,7 +80,7 @@ extension ServiceListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 0:
+        case 0,2:
             return 50
         case 1:
             return 35

@@ -11,6 +11,7 @@
         <!--Tab Bar-->
         <scene sceneID="MP3-Oa-OcX">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7IU-77-9MH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="zsg-qX-ik7" customClass="JAMTabBar" customModule="NMService" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="vQb-sA-CfV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -23,7 +24,6 @@
                         <segue destination="NGw-uC-H2b" kind="relationship" relationship="viewControllers" id="hA6-Z4-AiL"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7IU-77-9MH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-545" y="-133"/>
         </scene>
