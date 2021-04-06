@@ -25,14 +25,13 @@ class ServiceDetailCell: UITableViewCell {
     func updateViews() {
         if let serviceItem = self.serviceItem {
             DispatchQueue.main.async {
-                self.customerNameLabel.text = serviceItem.customerName
+                self.customerNameLabel.text = serviceItem.customerName.capitalized
                 self.serviceStatusLabel.text = serviceItem.serviceStatusStr
                 self.dateLabel.text = serviceItem.serviceDate.appDate()
                 
-                if serviceItem.serviceStatusStr.lowercased() == "closed" {
-                    self.IndicatorView.backgroundColor = UIColor(named: "appGreen")!
-                    self.serviceStatusLabel.textColor = UIColor(named: "appGreen")!
-                }
+                self.IndicatorView.backgroundColor = serviceItem.serviceStatusStr.lowercased() == "closed" ? UIColor(named: "appGreen")! : UIColor(named: "appRed")!
+                
+                self.serviceStatusLabel.textColor = serviceItem.serviceStatusStr.lowercased() == "closed" ? UIColor(named: "appGreen")! : UIColor(named: "appRed")!
             }
         }
     }

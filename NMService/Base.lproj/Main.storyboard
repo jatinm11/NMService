@@ -49,7 +49,9 @@
                             <constraint firstItem="ux0-Yq-3nr" firstAttribute="bottom" secondItem="Pfz-tP-Fxk" secondAttribute="bottom" id="il9-QT-DQX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="q54-Ps-izI"/>
+                    <navigationItem key="navigationItem" id="q54-Ps-izI">
+                        <barButtonItem key="backBarButtonItem" title=" " id="6t9-rW-RKT"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Pfz-tP-Fxk" id="r7y-NT-Cbi"/>
                     </connections>

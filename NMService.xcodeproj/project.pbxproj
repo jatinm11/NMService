@@ -142,11 +142,11 @@
 			children = (
 				7CAC824B2617318600EF68BD /* Main.storyboard */,
 				7C454BA826186559007C1D26 /* View Controllers */,
+				7C454BAF2618657E007C1D26 /* Cells */,
 				7CBEEF522617373D00B6653F /* Models */,
 				7CBEEF582617375F00B6653F /* Controller */,
 				7CBEEF482617336200B6653F /* Resources */,
 				7C454BA626186553007C1D26 /* Helpers */,
-				7C454BAF2618657E007C1D26 /* Cells */,
 			);
 			path = NMService;
 			sourceTree = "<group>";
