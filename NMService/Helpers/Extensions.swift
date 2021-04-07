@@ -26,4 +26,35 @@ extension String {
         dateFormatterForApp.dateFormat = "MMMM dd"
         return dateFormatterForApp.string(from: date!)
     }
+    
+    func dateTodayServerFormat() -> String {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let dateString = dateFormatter.string(from: currentDate)
+        return dateString
+    }
+    
+    func nucleiFormatWithoutYear() -> String {
+        let dateFormatterFromServer = DateFormatter()
+        dateFormatterFromServer.dateFormat = "yyyy-MM-dd"
+        let dateFromServer = dateFormatterFromServer.date(from: self)
+        
+        let dateFormatterForApp = DateFormatter()
+        dateFormatterForApp.dateFormat = "MMMM dd"
+        
+        return dateFormatterForApp.string(from: dateFromServer ?? Date())
+    }
+    
+    func nucleiFormat() -> String {
+        
+        let dateFormatterFromServer = DateFormatter()
+        dateFormatterFromServer.dateFormat = "dd-MM-yyyy"
+        let dateFromServer = dateFormatterFromServer.date(from: self)
+        
+        let dateFormatterForApp = DateFormatter()
+        dateFormatterForApp.dateFormat = "MMMM dd, yyyy"
+        
+        return dateFormatterForApp.string(from: dateFromServer ?? Date())
+    }
 }

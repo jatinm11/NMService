@@ -7,10 +7,18 @@
 
 import UIKit
 
+protocol DateCellDelegate {
+    func dateButtonTapped()
+}
+
 class DateCell: UITableViewCell {
 
+    var dateCellDelegate: DateCellDelegate!
+    
     @IBOutlet weak var dateButton: UIButton!
+    
     @IBAction func dateButtonTapped(_ sender: Any) {
+        dateCellDelegate.dateButtonTapped()
     }
     
     override func awakeFromNib() {

@@ -13,13 +13,15 @@ class HomeViewController: UIViewController {
     
     var serviceDashboardData: WeekServiceData?
     
+    var selectedDateString = "Today, \(String().dateTodayServerFormat().nucleiFormatWithoutYear())"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         registerCells()
         
-        NetworkController.shared.getDashboardData { (result) in
+        NetworkController.shared.getDashboardDataFor { (result) in
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)
@@ -96,8 +98,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let dateCell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath) as! DateCell
             dateCell.dateButton.contentHorizontalAlignment = .left
-            dateCell.dateButton.setTitle("Today, 03 April", for: .normal)
-            dateCell.dateButton.isUserInteractionEnabled = false
+            dateCell.dateButton.setTitle(self.selectedDateString, for: .normal)
+            dateCell.dateCellDelegate = self
             return dateCell
 
         case 2:
@@ -152,5 +154,42 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             navigationItem.title = ""
         }
+    }
+}
+
+extension HomeViewController: DateCellDelegate, DatePickerDelegate {
+    
+    func didSelect(date: String) {
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+        
+        NetworkController.shared.getDashboardDataFor(date: date) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+                return
+                
+            case .success(let dashboardData):
+                DispatchQueue.main.async {
+                    self.selectedDateString = date.nucleiFormat()
+                    self.serviceDashboardData = dashboardData.weekServiceData
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    func didCancelSelection() {
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+    }
+    
+    func showNewPicker() {
+        let vc = UIStoryboard(name: "Popups", bundle: nil).instantiateViewController(withIdentifier: "datePickerVC") as! DatePickerViewController
+        vc.datePickerDelegate = self
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func dateButtonTapped() {
+        showNewPicker()
     }
 }

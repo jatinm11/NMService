@@ -40,9 +40,9 @@ struct NetworkController {
         dataTask.resume()
     }
     
-    func getDashboardData(completion: @escaping(Result<DashboardData, JAMError>) -> Void) {
+    func getDashboardDataFor(date: String? = nil, completion: @escaping(Result<DashboardData, JAMError>) -> Void) {
         
-        let bodyDict: [String : Any] = ["from_date": "01-04-2021", "to_date": "02-04-2021"]
+        let bodyDict: [String : Any] = ["from_date": date ?? String().dateTodayServerFormat(), "to_date": date ?? String().dateTodayServerFormat()]
         let bodyData = try? JSONSerialization.data(withJSONObject: bodyDict, options: [])
         
         let request = JAMRequest(endPoint: EndPoint.dashboardData.rawValue, body: bodyData)
