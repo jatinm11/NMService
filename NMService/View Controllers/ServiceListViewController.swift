@@ -135,6 +135,7 @@ extension ServiceListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(ServiceReportViewController.controller(), animated: true)
+        let selectedServiceItem = self.serviceList[indexPath.row]
+        self.navigationController?.pushViewController(ServiceReportViewController.controller(serviceItem: selectedServiceItem), animated: true)
     }
 }

@@ -113,7 +113,9 @@
                             <constraint firstItem="VgI-3l-qK8" firstAttribute="trailing" secondItem="vRd-7i-viN" secondAttribute="trailing" id="ooY-J4-LWM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lX9-FQ-me8"/>
+                    <navigationItem key="navigationItem" id="lX9-FQ-me8">
+                        <barButtonItem key="backBarButtonItem" title=" " id="lEw-wF-2LG"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="vRd-7i-viN" id="wug-JX-EyI"/>
                     </connections>
