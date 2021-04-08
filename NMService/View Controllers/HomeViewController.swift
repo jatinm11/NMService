@@ -69,7 +69,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func fullReportButtonTapped() {
-        self.navigationController?.pushViewController(ServiceListViewController.controller(), animated: true)
+        self.navigationController?.pushViewController(ServiceListViewController.controller(selectedDate: self.selectedDateString), animated: true)
     }
 }
 

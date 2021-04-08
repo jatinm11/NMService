@@ -67,9 +67,9 @@ struct NetworkController {
         }
     }
     
-    func getServiceList(completion: @escaping(Result<[Service], JAMError>) -> Void) {
+    func getServiceListWith(date: String, completion: @escaping(Result<[Service], JAMError>) -> Void) {
         
-        let bodyDict: [String : Any] = ["from_date": "28-03-2021", "operation": "v", "service_status": "11", "sub_trans_type": "", "technician_id": "0", "to_date": "11-04-2021", "trans_type": ""]
+        let bodyDict: [String : Any] = ["from_date": date, "operation": "v", "service_status": "11", "sub_trans_type": "", "technician_id": "0", "to_date": date, "trans_type": ""]
         
         let bodyData = try? JSONSerialization.data(withJSONObject: bodyDict, options: [])
         

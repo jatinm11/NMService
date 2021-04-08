@@ -26,6 +26,7 @@
 		7C7A5748261B67740053C8C9 /* ServiceFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A5746261B67740053C8C9 /* ServiceFilterCell.xib */; };
 		7C7A574D261B6E950053C8C9 /* ServiceDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A574B261B6E950053C8C9 /* ServiceDetailCell.swift */; };
 		7C7A574E261B6E950053C8C9 /* ServiceDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A574C261B6E950053C8C9 /* ServiceDetailCell.xib */; };
+		7CAB8C7C261F5FE600105166 /* HapticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB8C7B261F5FE600105166 /* HapticController.swift */; };
 		7CAC82462617318600EF68BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAC82452617318600EF68BD /* AppDelegate.swift */; };
 		7CAC824D2617318600EF68BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC824B2617318600EF68BD /* Main.storyboard */; };
 		7CAC824F2617318700EF68BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC824E2617318700EF68BD /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		7C7A5746261B67740053C8C9 /* ServiceFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceFilterCell.xib; sourceTree = "<group>"; };
 		7C7A574B261B6E950053C8C9 /* ServiceDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailCell.swift; sourceTree = "<group>"; };
 		7C7A574C261B6E950053C8C9 /* ServiceDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceDetailCell.xib; sourceTree = "<group>"; };
+		7CAB8C7B261F5FE600105166 /* HapticController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticController.swift; sourceTree = "<group>"; };
 		7CAC82422617318600EF68BD /* NMService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAC82452617318600EF68BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CAC824C2617318600EF68BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				7CBEEF542617375A00B6653F /* NetworkController.swift */,
+				7CAB8C7B261F5FE600105166 /* HapticController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				7C0325D02619E5E500CC0B42 /* Service.swift in Sources */,
 				7C24FE11261E04CF00F4FD71 /* DatePickerViewController.swift in Sources */,
 				7CBEEF552617375A00B6653F /* NetworkController.swift in Sources */,
+				7CAB8C7C261F5FE600105166 /* HapticController.swift in Sources */,
 				7CBEEF502617352100B6653F /* DashboardData.swift in Sources */,
 				7CAC82462617318600EF68BD /* AppDelegate.swift in Sources */,
 				7CBEEF4C2617348100B6653F /* HomeViewController.swift in Sources */,

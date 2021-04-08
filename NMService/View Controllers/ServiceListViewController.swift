@@ -12,6 +12,7 @@ class ServiceListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var serviceList: [Service] = []
+    var selectedDate: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class ServiceListViewController: UIViewController {
     }
     
     func callAPI() {
-        NetworkController.shared.getServiceList { (result) in
+        NetworkController.shared.getServiceListWith(date: self.selectedDate.convertToServerFormat()) { (result) in
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)
@@ -54,8 +55,9 @@ class ServiceListViewController: UIViewController {
         }
     }
     
-    class func controller() -> UIViewController {
+    class func controller(selectedDate: String) -> UIViewController {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "serviceListVC") as! ServiceListViewController
+        vc.selectedDate = selectedDate
         return vc
     }
 }
@@ -89,8 +91,8 @@ extension ServiceListViewController: UITableViewDelegate, UITableViewDataSource 
         case 1:
             let dateCell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath) as! DateCell
             dateCell.dateButton.contentHorizontalAlignment = .left
-            dateCell.dateButton.setTitle("Today, 03 April", for: .normal)
-            dateCell.dateButton.isUserInteractionEnabled = false
+            dateCell.dateButton.setTitle(self.selectedDate, for: .normal)
+            dateCell.dateCellDelegate = self
             return dateCell
             
         case 2:
@@ -135,7 +137,46 @@ extension ServiceListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedServiceItem = self.serviceList[indexPath.row]
-        self.navigationController?.pushViewController(ServiceReportViewController.controller(serviceItem: selectedServiceItem), animated: true)
+        if indexPath.section == 3 {
+            let selectedServiceItem = self.serviceList[indexPath.row]
+            self.navigationController?.pushViewController(ServiceReportViewController.controller(serviceItem: selectedServiceItem), animated: true)
+        }
+    }
+}
+
+extension ServiceListViewController: DateCellDelegate, DatePickerDelegate {
+    
+    func showNewPicker() {
+        let vc = UIStoryboard(name: "Popups", bundle: nil).instantiateViewController(withIdentifier: "datePickerVC") as! DatePickerViewController
+        vc.datePickerDelegate = self
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        self.present(vc, animated: true, completion: nil)
+    }
+
+    func dateButtonTapped() {
+        showNewPicker()
+    }
+        
+    func didCancelSelection() {
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+    }
+    
+    func didSelect(date: String) {
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+        
+        NetworkController.shared.getServiceListWith(date: date) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+                return
+                
+            case .success(let serviceList):
+                DispatchQueue.main.async {
+                    self.selectedDate = date.nucleiFormat()
+                    self.serviceList = serviceList
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 }
