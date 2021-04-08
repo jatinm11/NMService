@@ -138,6 +138,7 @@ extension ServiceListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 3 {
+            HapticController.shared.generateTouchFeedback()
             let selectedServiceItem = self.serviceList[indexPath.row]
             self.navigationController?.pushViewController(ServiceReportViewController.controller(serviceItem: selectedServiceItem), animated: true)
         }
@@ -154,6 +155,7 @@ extension ServiceListViewController: DateCellDelegate, DatePickerDelegate {
     }
 
     func dateButtonTapped() {
+        HapticController.shared.generateLightFeedback()
         showNewPicker()
     }
         
@@ -164,6 +166,7 @@ extension ServiceListViewController: DateCellDelegate, DatePickerDelegate {
     func didSelect(date: String) {
         self.tabBarController?.tabBar.isUserInteractionEnabled = true
         
+        HapticController.shared.generateLightFeedback()
         NetworkController.shared.getServiceListWith(date: date) { (result) in
             switch result {
             case .failure(let error):

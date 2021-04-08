@@ -69,6 +69,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func fullReportButtonTapped() {
+        HapticController.shared.generateTouchFeedback()
         self.navigationController?.pushViewController(ServiceListViewController.controller(selectedDate: self.selectedDateString), animated: true)
     }
 }
@@ -190,6 +191,7 @@ extension HomeViewController: DateCellDelegate, DatePickerDelegate {
     }
     
     func dateButtonTapped() {
+        HapticController.shared.generateLightFeedback()
         showNewPicker()
     }
 }
